@@ -83,6 +83,21 @@
         p {
             margin-bottom: 10px;
         }
+        #fixed-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: auto;
+            z-index: 999;
+            opacity: 0.95;
+            transition: transform 0.3s;
+        }
+
+        #fixed-icon:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -329,5 +344,6 @@ A_m B_m C_m
     <pre><code>16</code></pre>
 
     <hr>
+    <img src="https://example.com/icon.png" alt="KOI 아이콘" id="fixed-icon">
 </body>
 </html>
