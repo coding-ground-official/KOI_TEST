@@ -4,31 +4,95 @@
     <meta charset="UTF-8">
     <title>코딩그라운드 정보올림피아드 모의고사</title>
     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9fc;
+            margin: 0;
+            padding: 40px;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px 0 30px 0;
+            padding: 10px 18px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+
         table {
             border-collapse: collapse;
-            width: 60%;
-          }
-          th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
+            width: 80%;
+            margin-top: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
             text-align: center;
-          }
-          th {
-            background-color: #f2f2f2;
-          }
-        body { font-family: Arial, sans-serif; line-height: 1.6; }
-        h1, h2 { color: #333; }
-        pre { background-color: #f4f4f4; padding: 10px; border-radius: 5px; }
-        code { font-family: "Courier New", Courier, monospace; }
+        }
+
+        th {
+            background-color: #f0f4f8;
+            font-weight: bold;
+        }
+
+        ul {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            list-style-type: square;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        pre {
+            background-color: #f4f6fa;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 15px;
+            overflow-x: auto;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: #2c3e50;
+        }
+
+        hr {
+            margin: 40px 0;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
     <h1>코딩그라운드 정보올림피아드 모의고사 1교시</h1>
-    <A href="https://www.biko.kr/challenge?page=1&categories=MULTIPLE_CHOICE&categories=SHORT_ANSWER&categories=JAVASCRIPT_INTERACTIVE&collections=koi2022r1m"> 1교시 문제풀기 - BIKO 로그인 필요 </A>
+    <a href="https://www.biko.kr/challenge?page=1&categories=MULTIPLE_CHOICE&categories=SHORT_ANSWER&categories=JAVASCRIPT_INTERACTIVE&collections=koi2022r1m">1교시 문제풀기 - BIKO 로그인 필요</a>
     <hr>
+
     <h1>코딩그라운드 정보올림피아드 모의고사 2교시 1번</h1>
-    <A href="https://www.acmicpc.net/submit/33174"> 정답코드 제출 - 백준로그인 필요 </A>
-   
+    <a href="https://www.acmicpc.net/submit/33174">정답코드 제출 - 백준 로그인 필요</a>
+
     <h1>당구</h1>
 
     <h2>문제</h2>
@@ -47,11 +111,10 @@
     <h2>입력</h2>
     <p>입력은 다음 형식으로 주어진다.</p>
     <pre><code>
-    N X
-    A<sub>1</sub> A<sub>2</sub> ... A<sub>N</sub> 
-    P<sub>1</sub> P<sub>2</sub> ... P<sub>N</sub>
+N X
+A₁ A₂ ... Aₙ 
+P₁ P₂ ... Pₙ
     </code></pre>
-
 
     <h2>출력</h2>
     <p>정올이가 구멍에 빠뜨릴 수 있는 공 번호의 최댓값을 1행에 출력한다. 단, 하나도 빠뜨릴 수 없는 경우 -1을 출력한다.</p>
@@ -59,10 +122,10 @@
     <h2>제약조건</h2>
     <ul>
         <li>1 ≦ N ≦ 200000</li>
-        <li>1 ≦ X ≦ 10<sup>15</sup> </li>
-        <li>1 ≦ A<sub>i</sub> ≦ 10<sup>9</sup> (1 ≦ i ≦ N)  </li>
-        <li>1 ≦ P<sub>i</sub> ≦ N 또는 P<sub>i</sub> = -1 (1 ≦ i ≦ N)  </li>
-        <li>P<sub>i</sub> ≠ i (1 ≦ i ≦ N)  </li>
+        <li>1 ≦ X ≦ 10<sup>15</sup></li>
+        <li>1 ≦ A<sub>i</sub> ≦ 10<sup>9</sup></li>
+        <li>1 ≦ P<sub>i</sub> ≦ N 또는 P<sub>i</sub> = -1</li>
+        <li>P<sub>i</sub> ≠ i</li>
         <li>입력되는 값은 모두 정수이다.</li>
     </ul>
 
@@ -76,139 +139,68 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>6</td>
-            <td>N ≦ 1000, P<sub>i</sub> = -1  </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>9</td>
-            <td>N ≦ 1000, P<sub>i</sub> = -1 또는 P<sub>i</sub> = i-1  </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>16</td>
-            <td>N ≦ 1000, P<sub>i</sub> < i</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>20</td>
-            <td>P<sub>i</sub> < i  </td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>19</td>
-            <td>N ≦ 1000  </td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>30</td>
-            <td>추가 제약 없음  </td>
-          </tr>
+          <tr><td>1</td><td>6</td><td>N ≦ 1000, P<sub>i</sub> = -1</td></tr>
+          <tr><td>2</td><td>9</td><td>N ≦ 1000, P<sub>i</sub> = -1 또는 P<sub>i</sub> = i-1</td></tr>
+          <tr><td>3</td><td>16</td><td>N ≦ 1000, P<sub>i</sub> < i</td></tr>
+          <tr><td>4</td><td>20</td><td>P<sub>i</sub> < i</td></tr>
+          <tr><td>5</td><td>19</td><td>N ≦ 1000</td></tr>
+          <tr><td>6</td><td>30</td><td>추가 제약 없음</td></tr>
         </tbody>
-      </table>
+    </table>
+
     <hr>
     <h2>예제 입력 1</h2>
     <pre><code>
-    6 7
-    1 2 4 3 10 100
-    -1 -1 -1 -1 -1 -1
+6 7
+1 2 4 3 10 100
+-1 -1 -1 -1 -1 -1
     </code></pre>
 
     <h2>예제 출력 1</h2>
-    <pre><code>
-    4
-    </code></pre>
-
-    <p>처음에, 정올이의 집중력은 7이다.</p>
-
-    <p>모든 i (1 ≦ i ≦ N)에 대해 P<sub>i</sub> = -1이므로, 정올이는 집중력이 충분한 한 모든 공을 언제든지 구멍에 넣을 수 있다.</p>
-
-    <p>예를 들어, 다음과 같이 하면 정올이는 공 4를 넣을 수 있다.</p>
-
-    <p>먼저, 공 3을 구멍에 넣는다. 정올이의 집중력이 4 감소하여 남은 집중력은 3이 된다.</p>
-    <p>다음으로, 공 4를 구멍에 넣는다. 정올이의 집중력이 3 감소하여 남은 집중력은 0이 된다.</p>
-    <p>또한, 정올이는 공 5와 6을 구멍에 넣을 수 없다.</p>
-    <p>따라서, 정올이가 구멍에 넣을 수 있는 공 번호의 최댓값은 4이다.</p>
-
-    <p>이 입력 예시는 부분문제 1, 3, 4, 5, 6의 제한을 만족한다.</p>
+    <pre><code>4</code></pre>
 
     <hr>
     <h2>예제 입력 2</h2>
     <pre><code>
-    5 12
-    1 2 3 5 8
-    -1 1 2 3 4
+5 12
+1 2 3 5 8
+-1 1 2 3 4
     </code></pre>
 
     <h2>예제 출력 2</h2>
-    <pre><code>
-    4
-    </code></pre>
-
-    <p>처음에, 정올이의 집중력은 12이다.</p>
-
-    <p>예를 들어, 다음과 같이 하면 정올이는 공 4를 구멍에 넣을 수 있다.</p>
-
-    <p>먼저, 공 1을 구멍에 넣는다. (<span>P<sub>1</sub></span> = -1이므로 공 1은 언제든지 넣을 수 있다.)</p>
-    <p>정올이의 집중력이 1 감소하여 남은 집중력은 11이 된다.</p>
-    <p>다음으로, 공 2를 구멍에 넣는다. (<span>P<sub>2</sub></span> = 1이고 공 1은 이미 넣었기 때문에 공 2를 넣을 수 있다.)</p>
-    <p>정올이의 집중력이 2 감소하여 남은 집중력은 9가 된다.</p>
-    <p>다음으로, 공 3을 구멍에 넣는다. (<span>P<sub>3</sub></span> = 2이고 공 2는 이미 넣었기 때문에 공 3을 넣을 수 있다.)</p>
-    <p>정올이의 집중력이 3 감소하여 남은 집중력은 6이 된다.</p>
-    <p>다음으로, 공 4를 구멍에 넣는다. (<span>P<sub>4</sub></span> = 3이고 공 3은 이미 넣었기 때문에 공 4를 넣을 수 있다.)</p>
-    <p>정올이의 집중력이 5 감소하여 남은 집중력은 1이 된다.</p>
-    <p>또한, 정올이는 공 5를 구멍에 넣을 수 없다.</p>
-    <p>따라서, 정올이가 구멍에 넣을 수 있는 공 번호의 최댓값은 4이다.</p>
-
-    <p>이 입력 예시는 부분문제 2, 3, 4, 5, 6의 제한을 만족한다.</p>
+    <pre><code>4</code></pre>
 
     <hr>
     <h2>예제 입력 3</h2>
     <pre><code>
-    8 10
-    3 1 4 1 5 9 2 6
-    -1 1 2 -1 4 4 5 7
+8 10
+3 1 4 1 5 9 2 6
+-1 1 2 -1 4 4 5 7
     </code></pre>
 
     <h2>예제 출력 3</h2>
-    <pre><code>
-    7
-    </code></pre>
-    <p>이 입력 예시는 부분문제 3, 4, 5, 6의 제한을 만족한다.</p>
+    <pre><code>7</code></pre>
+
     <hr>
     <h2>예제 입력 4</h2>
     <pre><code>
-    2 1000000000000000
-    1 1
-    2 1
+2 1000000000000000
+1 1
+2 1
     </code></pre>
 
     <h2>예제 출력 4</h2>
-    <pre><code>
-    -1
-    </code></pre>
-    
-    <p>P<sub>1</sub> = 2이므로, 공 1을 넣기 위해서는 공 2가 이미 구멍에 들어가 있어야 한다.</p>
-    <p>반대로, P<sub>2</sub> = 1이므로, 공 2를 넣기 위해서는 공 1이 이미 구멍에 들어가 있어야 한다.</p>
-    <p>이로 인해 정올이는 공을 하나도 넣을 수 없다.</p>
-    <p>따라서 -1을 출력한다.</p>
-    <p>이 입력 예시는 부분문제 5, 6의 제한을 만족한다.</p>
+    <pre><code>-1</code></pre>
 
     <hr>
-
     <h2>예제 입력 5</h2>
     <pre><code>
-    9 2468024680
-    123456789 234567891 345678912 456789123 567891234 678912345 789123456 891234567 912345678
-    6 5 4 -1 3 2 1 9 8
+9 2468024680
+123456789 234567891 345678912 456789123 567891234 678912345 789123456 891234567 912345678
+6 5 4 -1 3 2 1 9 8
     </code></pre>
 
     <h2>예제 출력 5</h2>
-    <pre><code>
-    6
-    </code></pre>
-    <p>이 입력 예시는 부분문제 5, 6의 제한을 만족한다.</p>
+    <pre><code>6</code></pre>
 </body>
 </html>
